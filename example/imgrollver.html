@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<meta charset="utf-8">
+<title>TEST - cb.imgrollover.js</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta property="og:title" content="">
+<meta property="og:description" content="PAGE NAME">
+<meta property="og:url" content="http://*******************">
+<meta property="og:image" content="http://*******************/img/social.png">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" sizes="16x16" href="/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="/img/apple_touch_icon.png" />
+<link rel="stylesheet" href="css/common.css" media="screen, print">
+<link rel="stylesheet" href="css/print.css" media="print">
+<script src="../js/libs/LAB.js"></script>
+<script src="../js/libs/fLAB.js"></script><!-- 開発環境のみ -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<h1>cb.imgrollover.js</h1>
+
+<p>有効<br>
+<a href="#"><img src="img/nav_01.png" alt="" class="btn"></a></p>
+
+<p>ファイル名の最後が_oなので無効<br>
+<a href="#"><img src="img/nav_01_o.png" alt="" class="btn"></a></p>
+
+<p>ファイル名の最後が_dなので無効<br>
+<a href="#"><img src="img/nav_01_d.png" alt="" class="btn"></a></p>
+
+
+<script src="../js/cb.imgrollover.js"></script>
+<script>
+$(function() {
+  $('.btn').imgRollover();
+});
+
+</script>
+</body>
+</html>

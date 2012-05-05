@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<meta charset="utf-8">
+<title>TEST - cb.tabchange.js</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta property="og:title" content="">
+<meta property="og:description" content="PAGE NAME">
+<meta property="og:url" content="http://*******************">
+<meta property="og:image" content="http://*******************/img/social.png">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" sizes="16x16" href="/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="/img/apple_touch_icon.png" />
+<link rel="stylesheet" href="css/common.css" media="screen, print">
+<link rel="stylesheet" href="css/print.css" media="print">
+<script src="../js/libs/LAB.js"></script>
+<script src="../js/libs/fLAB.js"></script><!-- 開発環境のみ -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<body>
+<h1>tab処理のテスト</h1>
+
+<div id="tabSet">
+
+<ul class="tabs">
+<li class="current"><a href="#tab1cont">tab1</a></li>
+<li><a href="#tab2cont">tab2</a></li>
+<li><a href="#tab3cont">tab3</a></li>
+</ul>
+<div id="tab1cont" class="tabcont">
+tab1の内容です。tab1の内容です。tab1の内容です。tab1の内容です。tab1の内容です。tab1の内容です。tab1の内容です。tab1の内容です。tab1の内容です。tab1の内容です。
+</div>
+<div id="tab2cont" class="tabcont">
+tab2tab2
+</div>
+<div id="tab3cont" class="tabcont">
+tab3tab3
+</div>
+
+
+</div>
+
+<style type="text/css">
+.tabs {
+overflow: hidden;
+margin:0;
+list-style-type: none;
+}
+.tabs li {
+	float: left;
+	margin: 0;
+	padding: 0;
+list-style-type: none;
+}
+.tabs li a {
+float: left;
+	display: block;
+	width:150px;	padding:5px;
+	margin:0 5px;
+	background:#CCC;
+	list-style: none;
+}
+
+.tabs li.current a {
+display: block;
+	background: white;
+	color: black;
+	text-decoration: none;
+	border:1px solid black;
+}
+
+.tabcont {
+	border: 1px solid #999;
+	padding:10px;
+}
+
+</style>
+<script src="../js/cb.tabchange.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#tabSet .tabs').tabChange();
+});
+</script>
+
+</body>
+</html5>
