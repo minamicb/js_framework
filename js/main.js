@@ -1,50 +1,38 @@
-jQuery( function($) {
-  $.route({
-    path: /./,
-    func: function() { // common use
-      $LAB.script('js/libs/modernizr.js')
-          .script('js/ga.js')
-          .script('js/cb.js')
-          .wait(function() {
-             $(function(){
-                 $('img,input[type=image]').imgRollver();
-             
-             })
-          });
-    }
-  },
-  {
-    path: /^\/hello/,
-    func: function() {
-            $LAB.script('js/hoge.js');
-    }
-  });
+require.config({
+		paths: {
+			jquery: '//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min',
+			router: 'libs/jquery.router',
+			modernizr: 'libs/modernizr',
+			ga: 'ga',
+			cb: 'cb'
+		}
 });
 
-
-
-
-
-/**
- *  jQuery Router plugin
- *  require jQuery 1.2
- *  (c) Hideaki Tanabe <http://blog.kaihatsubu.com>
- *  reference http://tech.kayac.com/archive/javascript-url-dispatcher.html
- *  Licensed under the MIT License.
- */
-(function($) {
-  var pathname = location.pathname;
-  $.route = function() {
-    $.each(arguments, function(index) {
-      var path = this["path"];
-      var func = this["func"];
-      if (path && func) {
-        if (pathname.match(path)) {
-          $(function() {
-            func.apply(this);
-          });
-        }
-      }
-    });
-  };
-})(jQuery);
+require(["jquery"],function(){
+	
+	/* URL Routing */
+	require(["router"],function(){
+		  $.route({
+		    path: /./,
+		    func: function() {
+					// common
+					require(["modernizr","ga","cb"],function(modernizr,ga,cb){
+						$(function(){
+							console.log("common");
+							$('a').smoothScroll();
+						});
+		      });
+		    }
+		  },
+		  {
+		    path: /\/hello\//,
+		    func: function() {
+					// /hello
+					require(["hoge"],function(){
+						Hoge.test();
+		      });
+		    }
+		  });
+			
+	});
+});
