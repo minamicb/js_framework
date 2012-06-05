@@ -6,20 +6,19 @@ htmlコーディング時でのjavascriptによるサポート処理
 ## ディレクトリ構成
 
 ###js
-* main.js // jQuery Router plugin使用によるURL別でのcb.js内のメソッド実行処理
-* cb.js   // 今回のメイン
+* main.js // Require.js＆jQuery Router plugin使用によるURL別でのcb.js内のメソッド実行処理
 * ga.js   // ga非同期トラッキングコード
 
 ###js/libs（外部ライブラリ)
-* LAB.js [http://labjs.com/] js非同期通信
-* fLAB.js（ローカル確認用）
+* jQuery
+* Require.js [http://requirejs.org/] js非同期通信
 * modernizr.js [http://modernizr.com/] 
-* 
+* cb.js   // 汎用処理
 
 ## やりたいこと
 * JSとhtmlは極力分離する = jQuery Router plugin
-* 非同期通信を進めたい = ページ高速化のため LAB.js
-* コーディングルールもまとめたい（インデントはスペース？）
+* 非同期通信を進めたい = ページ高速化のため Require.js
+* コーディングルールもまとめたい（インデントは4スペース）
 * 関数ではなく各処理はプラグイン化したい（デザイナが後ほどオプション操作できるように）
 
 ##ほしいプラグイン機能
